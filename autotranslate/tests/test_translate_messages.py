@@ -43,7 +43,8 @@ class POFileTestCase(unittest.TestCase):
         cmd.set_options(**dict(
                 locale='ia',
                 set_fuzzy=False,
-                skip_translated=False
+                skip_translated=False,
+                source_language="en"
         ))
         self.cmd = cmd
         self.po = polib.pofile(os.path.join(os.path.dirname(__file__), 'data/django.po'))

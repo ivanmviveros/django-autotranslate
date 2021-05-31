@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -106,7 +105,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = [("es", "Español"), ("en", "English")]
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+
+AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
+
+AUTOTRANSLATE_GOOGLE_TRANSLATOR_SERVICE_CREDENTIALS_JSON = {}
 
 TIME_ZONE = 'UTC'
 

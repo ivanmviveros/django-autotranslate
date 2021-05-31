@@ -72,7 +72,7 @@ class Command(BaseCommand):
                         continue
 
                     # get the target language from the parent folder name
-                    target_language = os.path.basename(os.path.dirname(root))
+                    target_language = os.path.basename(root)
 
                     if self.locale and target_language not in self.locale:
                         logger.info('skipping translation for locale `{}`'.format(target_language))

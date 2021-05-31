@@ -2,3 +2,5 @@ django
 goslate
 polib
 six
+google-cloud-translate==2.0
+google-oauth
