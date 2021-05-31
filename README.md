@@ -54,7 +54,7 @@ Settings:
     # default: 'autotranslate.services.GoSlateTranslatorService'
     # pip install google-api-python-client
     AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
-    GOOGLE_TRANSLATE_KEY = '<google-api-key>'
+    AUTOTRANSLATE_GOOGLE_TRANSLATOR_SERVICE_CREDENTIALS_JSON = {...} #Service account credential json. See: https://cloud.google.com/translate/docs/setup
 ```
 
 Compatibility Matrix:
