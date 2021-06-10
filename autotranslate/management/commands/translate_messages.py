@@ -92,7 +92,7 @@ class Command(BaseCommand):
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = self.get_strings_to_translate(po)
-        max_string_size = max(strings, key=len)
+        max_string_size = len(max(strings, key=len))
         po.wrapwidth = max_string_size
         # translate the strings,
         # all the translated strings are returned
