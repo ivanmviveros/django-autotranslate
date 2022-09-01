@@ -6,6 +6,8 @@ from autotranslate.compat import goslate, googleapiclient
 
 from django.conf import settings
 
+from autotranslate.utils import chunks
+
 
 class BaseTranslatorService:
     """
@@ -89,8 +91,10 @@ class GoogleAPITranslatorService(BaseTranslatorService):
             strings, collections.MutableSequence
         ), "`strings` should be a sequence containing string_types"
 
-        response = self.translate_client.translate(
-            strings, target_language=target_language, source_language=source_language
-        )
+        response = []
+        for chunk in list(chunks(strings, getattr(settings, 'AUTOTRANSLATE_GOOGLE_TRANSLATOR_SERVICE_SEGMENTS_LIMIT', 120))):
+            response.extend(self.translate_client.translate(
+                chunk, target_language=target_language, source_language=source_language
+            ))
         self.translated_strings.extend([translation["translatedText"] for translation in response])
         return self.translated_strings

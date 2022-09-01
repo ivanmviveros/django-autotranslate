@@ -40,3 +40,8 @@ def get_translator():
                                 'autotranslate.services.GoSlateTranslatorService')
     translator = perform_import(TranslatorService, 'AUTOTRANSLATE_TRANSLATOR_SERVICE')()
     return translator
+
+def chunks(list, n):
+    """Yield successive n-sized chunks from list."""
+    for i in range(0, len(list), n):
+        yield list[i:i + n]
