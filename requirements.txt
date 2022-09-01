@@ -1,6 +1,7 @@
 django
-goslate
-polib
-six
+goslate==1.5.1
+polib==1.1.1
+six==1.16.0
 google-cloud-translate==2.0
-google-oauth
+google-auth==1.34.0
+
